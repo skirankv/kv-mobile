@@ -1,12 +1,16 @@
-import {View} from 'react-native';
 import React from 'react';
+import {Text, View} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
 import HomeScreen from './src/screens/HomeScreen';
 
-const App = () => {
+const App: React.FC = () => {
   return (
-    <View style={{flex: 1}}>
-      <HomeScreen />
-    </View>
+    <NavigationContainer>
+      <View style={{flex: 1}}>
+        {/* <Text>App</Text> */}
+        <HomeScreen />
+      </View>
+    </NavigationContainer>
   );
 };
 

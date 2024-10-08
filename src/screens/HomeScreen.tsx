@@ -31,8 +31,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#F5FCFF',
   },
   container: {
-    height: 300,
-    width: 300,
+    height: '100%',
+    width: '100%',
     backgroundColor: 'tomato',
   },
   map: {

@@ -1,14 +1,13 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {View} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
-import HomeScreen from './src/screens/HomeScreen';
+import BaseNavigator from './src/navigators/BaseNavigator';
 
 const App: React.FC = () => {
   return (
     <NavigationContainer>
       <View style={{flex: 1}}>
-        {/* <Text>App</Text> */}
-        <HomeScreen />
+        <BaseNavigator />
       </View>
     </NavigationContainer>
   );

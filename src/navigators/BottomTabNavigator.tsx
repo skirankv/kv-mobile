@@ -3,6 +3,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import HomeScreen from '../screens/HomeScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import {Routes} from '../utilities/Routes';
+import TabIcon from '../components/TabIcon';
 
 const BottomTabNavigator: React.FC = () => {
   const Tab = createBottomTabNavigator();
@@ -26,8 +27,24 @@ const BottomTabNavigator: React.FC = () => {
 
   return (
     <Tab.Navigator initialRouteName={Routes.Home} screenOptions={screenOptions}>
-      <Tab.Screen name={Routes.Home} component={HomeScreen} />
-      <Tab.Screen name={Routes.Profile} component={ProfileScreen} />
+      <Tab.Screen
+        name={Routes.Home}
+        component={HomeScreen}
+        options={{
+          tabBarIcon: ({focused, color}) => (
+            <TabIcon tab={Routes.Home} focused={focused} color={color} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name={Routes.Profile}
+        component={ProfileScreen}
+        options={{
+          tabBarIcon: ({focused, color}) => (
+            <TabIcon tab={Routes.Profile} focused={focused} color={color} />
+          ),
+        }}
+      />
     </Tab.Navigator>
   );
 };

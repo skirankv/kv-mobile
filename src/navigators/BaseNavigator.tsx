@@ -1,7 +1,8 @@
-import {createStackNavigator} from '@react-navigation/stack';
+import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
 import BottomTabNavigator from './BottomTabNavigator';
-import {Routes} from '../utilities/Routes';
+import { Routes } from '../utilities/Routes';
+import DrawerNavigator from './DrawerNavigator';
 
 const Stack = createStackNavigator();
 
@@ -14,10 +15,7 @@ const BaseNavigator: React.FC = () => {
         gestureEnabled: false,
         headerLeft: () => null,
       }}>
-      <Stack.Screen
-        name={Routes.BottomTabNavigator}
-        component={BottomTabNavigator}
-      />
+      <Stack.Screen name={Routes.DrawerNavigator} component={DrawerNavigator} />
     </Stack.Navigator>
   );
 };

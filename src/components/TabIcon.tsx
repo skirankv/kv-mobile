@@ -9,7 +9,7 @@ interface Props {
 }
 
 const TabIcon: React.FC<Props> = (props: Props) => {
-  const {focused, color, tab} = props;
+  const { focused, color, tab } = props;
 
   const getImage = () => {
     if (tab === 'Home') {

@@ -1,6 +1,6 @@
-import React, {useEffect} from 'react';
-import {StyleSheet, View} from 'react-native';
-import Mapbox, {MapView} from '@rnmapbox/maps';
+import React, { useEffect } from 'react';
+import { StyleSheet, View } from 'react-native';
+import Mapbox, { MapView } from '@rnmapbox/maps';
 
 const mapBoxToken =
   'pk.eyJ1Ijoia3Jpc2hpdmVkaWthIiwiYSI6ImNsdGQ1MGpsdzAyb2QybG0yeDNheWdheWwifQ.n2SXymzs0FWbxb2XtL22jw';

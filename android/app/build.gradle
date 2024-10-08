@@ -116,4 +116,9 @@ dependencies {
     } else {
         implementation jscFlavor
     }
+
+    implementation("com.mapbox.maps:android:10.1.31")
+    implementation("com.mapbox.mapboxsdk:mapbox-android-sdk:9.6.2") {
+        exclude group: 'com.mapbox.mapboxsdk', module: 'mapbox-android-core'
+    }
 }

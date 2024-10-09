@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import BaseNavigator from './src/navigators/BaseNavigator';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
@@ -7,6 +7,7 @@ import ErrorBoundary from 'react-native-error-boundary';
 import ErrorScreen from './src/screens/ErrorScreen';
 import { NativeBaseProvider } from 'native-base';
 import { LogBox } from 'react-native';
+import { setItemInStorage } from './src/utilities/utils';
 
 LogBox.ignoreLogs(['Warning: ...']);
 LogBox.ignoreLogs(['Remote debugger']);

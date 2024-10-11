@@ -6,8 +6,14 @@ import { RootSiblingParent } from 'react-native-root-siblings';
 import ErrorBoundary from 'react-native-error-boundary';
 import ErrorScreen from './src/screens/ErrorScreen';
 import { NativeBaseProvider } from 'native-base';
-import { LogBox } from 'react-native';
+import { LogBox, Platform } from 'react-native';
 import { setItemInStorage } from './src/utilities/utils';
+import Mapbox from '@rnmapbox/maps';
+
+const mapBoxToken =
+  'pk.eyJ1Ijoia3Jpc2hpdmVkaWthIiwiYSI6ImNsdGQ1MGpsdzAyb2QybG0yeDNheWdheWwifQ.n2SXymzs0FWbxb2XtL22jw';
+
+Mapbox.setAccessToken(mapBoxToken);
 
 LogBox.ignoreLogs(['Warning: ...']);
 LogBox.ignoreLogs(['Remote debugger']);
@@ -18,6 +24,22 @@ const App: React.FC = () => {
   const CustomFallback = (props: { error: Error; resetError: () => void }) => (
     <ErrorScreen resetError={props.resetError} />
   );
+
+  useEffect(() => {
+    hasLocationPermission();
+    Mapbox.setTelemetryEnabled(false);
+  }, []);
+
+  const hasLocationPermission = async () => {
+    if (
+      Platform.OS === 'ios' ||
+      (Platform.OS === 'android' && Platform.Version < 23)
+    ) {
+      return true;
+    }
+    const isGranted = await Mapbox.requestAndroidLocationPermissions();
+    return isGranted;
+  };
 
   return (
     <SafeAreaProvider>

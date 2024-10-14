@@ -3,6 +3,7 @@ import BottomTabNavigator from './BottomTabNavigator';
 import SettingsScreen from '../screens/SettingsScreen';
 import TabIcon from '../components/TabIcon';
 import CustomDrawer from '../components/CustomDrawer';
+import MapScreen from '../screens/MapScreen';
 
 const DrawerNavigator: React.FC = () => {
   const Drawer = createDrawerNavigator();
@@ -38,6 +39,16 @@ const DrawerNavigator: React.FC = () => {
           ),
         }}
       />
+      {/* <Drawer.Screen
+        name="Polygon"
+        component={MapScreen}
+        options={{
+          title: 'Polygon',
+          // drawerIcon: ({ focused, color }) => (
+          //   <TabIcon focused={focused} color={color} tab="Settings" />
+          // ),
+        }}
+      /> */}
     </Drawer.Navigator>
   );
 };

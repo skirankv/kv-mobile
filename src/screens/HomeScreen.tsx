@@ -1,21 +1,28 @@
 import React, { useEffect } from 'react';
 import { StyleSheet, View } from 'react-native';
-import Mapbox, { MapView } from '@rnmapbox/maps';
-
-const mapBoxToken =
-  'pk.eyJ1Ijoia3Jpc2hpdmVkaWthIiwiYSI6ImNsdGQ1MGpsdzAyb2QybG0yeDNheWdheWwifQ.n2SXymzs0FWbxb2XtL22jw';
-
-Mapbox.setAccessToken(mapBoxToken);
+import { Camera, MapView, UserLocation } from '@rnmapbox/maps';
 
 const HomeScreen = () => {
-  useEffect(() => {
-    Mapbox.setTelemetryEnabled(false);
-  }, []);
-
   return (
     <View style={styles.page}>
       <View style={styles.container}>
-        <MapView style={styles.map} />
+        <MapView
+          style={styles.map}
+          attributionEnabled={false}
+          styleURL="mapbox://styles/mapbox/satellite-v9"
+          logoEnabled={false}>
+          <Camera
+            defaultSettings={{
+              centerCoordinate: [83.47555027922438, 18.09726756199246],
+            }}
+            zoomLevel={16}
+          />
+          <UserLocation
+            androidRenderMode={'compass'}
+            visible={true}
+            showsUserHeadingIndicator={true}
+          />
+        </MapView>
       </View>
     </View>
   );

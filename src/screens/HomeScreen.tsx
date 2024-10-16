@@ -1,6 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Camera, MapView, UserLocation } from '@rnmapbox/maps';
+import { PolygonPoints1, PolygonPoints2 } from '../utilities/PolygonPoints';
+import { getPolygonGeoJSonFromPoints } from '../utilities/utils';
+import Polygon from '../components/Polygon';
 
 const HomeScreen = () => {
   return (
@@ -15,12 +18,20 @@ const HomeScreen = () => {
             defaultSettings={{
               centerCoordinate: [83.47555027922438, 18.09726756199246],
             }}
-            zoomLevel={16}
+            zoomLevel={18}
           />
           <UserLocation
             androidRenderMode={'compass'}
             visible={true}
             showsUserHeadingIndicator={true}
+          />
+          <Polygon
+            polygon={getPolygonGeoJSonFromPoints(PolygonPoints1)}
+            polygonId="some-feature1"
+          />
+          <Polygon
+            polygon={getPolygonGeoJSonFromPoints(PolygonPoints2)}
+            polygonId="some-feature2"
           />
         </MapView>
       </View>

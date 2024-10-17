@@ -3,4 +3,5 @@ export const Routes = {
   Profile: 'Profile',
   BottomTabNavigator: 'BottomTabNavigator',
   DrawerNavigator: 'DrawerNavigator',
+  DrawPolyline: 'DrawPolyline',
 };

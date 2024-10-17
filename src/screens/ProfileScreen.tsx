@@ -1,10 +1,9 @@
-import { Text, View } from 'react-native';
-import React, { useEffect } from 'react';
-import { getItemFromStorage } from '../utilities/utils';
+import { View, Text } from 'react-native';
+import React from 'react';
 
 const ProfileScreen = () => {
   return (
-    <View style={{ flex: 1 }}>
+    <View>
       <Text style={{ color: '#000' }}>ProfileScreen</Text>
     </View>
   );

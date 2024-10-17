@@ -4,6 +4,7 @@ import HomeScreen from '../screens/HomeScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import { Routes } from '../utilities/Routes';
 import TabIcon from '../components/TabIcon';
+import DrawPolyline from '../screens/DrawPolyline';
 
 const BottomTabNavigator: React.FC = () => {
   const Tab = createBottomTabNavigator();
@@ -42,6 +43,19 @@ const BottomTabNavigator: React.FC = () => {
         options={{
           tabBarIcon: ({ focused, color }) => (
             <TabIcon tab={Routes.Profile} focused={focused} color={color} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name={Routes.DrawPolyline}
+        component={DrawPolyline}
+        options={{
+          tabBarIcon: ({ focused, color }) => (
+            <TabIcon
+              tab={Routes.DrawPolyline}
+              focused={focused}
+              color={color}
+            />
           ),
         }}
       />

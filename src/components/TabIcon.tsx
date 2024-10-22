@@ -28,6 +28,14 @@ const TabIcon: React.FC<Props> = (props: Props) => {
       return focused
         ? NavigatorImages.activeMain
         : NavigatorImages.inactiveMain;
+    } else if (tab === 'DrawPolyline') {
+      return focused
+        ? NavigatorImages.activeMain
+        : NavigatorImages.inactiveMain;
+    } else if (tab === 'AddFarm') {
+      return focused
+        ? NavigatorImages.activeMain
+        : NavigatorImages.inactiveMain;
     }
   };
 

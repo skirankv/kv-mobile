@@ -32,3 +32,21 @@ export const clearStorage = async () => {
     return;
   }
 };
+
+export const getPolygonGeoJSonFromPoints = (
+  points: any[],
+): GeoJSON.FeatureCollection => {
+  return {
+    type: 'FeatureCollection',
+    features: [
+      {
+        type: 'Feature',
+        properties: {},
+        geometry: {
+          type: 'Polygon',
+          coordinates: [points.map((point: any) => [point.long, point.lat])],
+        },
+      },
+    ],
+  };
+};

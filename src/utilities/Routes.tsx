@@ -4,4 +4,5 @@ export const Routes = {
   BottomTabNavigator: 'BottomTabNavigator',
   DrawerNavigator: 'DrawerNavigator',
   DrawPolyline: 'DrawPolyline',
+  AddFarm: 'AddFarm',
 };

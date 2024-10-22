@@ -5,6 +5,7 @@ import ProfileScreen from '../screens/ProfileScreen';
 import { Routes } from '../utilities/Routes';
 import TabIcon from '../components/TabIcon';
 import DrawPolyline from '../screens/DrawPolyline';
+import AddFarm from '../screens/AddFarm';
 
 const BottomTabNavigator: React.FC = () => {
   const Tab = createBottomTabNavigator();
@@ -56,6 +57,15 @@ const BottomTabNavigator: React.FC = () => {
               focused={focused}
               color={color}
             />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name={Routes.AddFarm}
+        component={AddFarm}
+        options={{
+          tabBarIcon: ({ focused, color }) => (
+            <TabIcon tab={Routes.AddFarm} focused={focused} color={color} />
           ),
         }}
       />
